@@ -1,22 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import './index.css'
-import ErrorPage from './components/errorpage/ErrorPage';
+import router from './routes/Routes';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-    errorElement:<ErrorPage></ErrorPage>,
-  },
-]);
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AuthProviders from './providers/AuthProviders';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProviders>
+      <RouterProvider router={router}></RouterProvider>
+      <ToastContainer />
+    </AuthProviders>
+
+    
   </React.StrictMode>,
 )
