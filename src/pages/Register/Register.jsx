@@ -96,9 +96,9 @@ const Register = () => {
         }
 
         // create user
-        createUser(email, password)
+        createUser(name, p_url, email, password)
         .then(result =>{
-            console.log(result.user)
+            //console.log("user is ",result.user)
             // Show success toast
             toast.success('Registration successful');
         })
@@ -107,6 +107,8 @@ const Register = () => {
             // Show error toast
             toast.error('Registration failed');
         });
+
+        
 
         // Clear form data
         setFormData({

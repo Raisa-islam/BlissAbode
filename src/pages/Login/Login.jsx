@@ -1,40 +1,53 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
-import { Result } from 'postcss';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
     const {signIn, GoogleSignIn, GithubSignIn} = useContext(AuthContext);
-    const [showPassword, setShowPassword] = useState(false)
+    const [showPassword, setShowPassword] = useState(false);
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    });
+
+    const handleChange = e => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
 
     const handleGoogleSignIn = () =>{
         GoogleSignIn();
+       
     }
 
     const handleGithubSignIn = () =>{
         GithubSignIn();
+        
     }
 
     const handleLogin = async e =>{
         e.preventDefault();
-        console.log(e.currentTarget);
-        const form = new FormData(e.currentTarget);
-        const email = form.get('email');
-        const password = form.get('password');
-        // console.log(email, password);
-       
+        const { email, password } = formData;
+
         signIn(email, password)
             .then(result =>{
                 toast.success('Login successful');
-                console.log(result.user)
+                console.log(result.user);
+                // Clear form data after successful login
+                setFormData({
+                    email: '',
+                    password: ''
+                });
+               
             })
             .catch(error =>{
-               
                 toast.error('Credential does not match');
-                console.error();
-            })
+                console.error(error);
+            });
     }
 
     return (
@@ -45,14 +58,14 @@ const Login = () => {
                         <label className="text-xl text-black font-semibold">
                             Email
                         </label>
-                        <input type="email" placeholder="Enter your email" className="input input-bordered" name='email' required />
+                        <input type="email" placeholder="Enter your email" className="input input-bordered" name='email' value={formData.email} onChange={handleChange} required />
                     </div>
 
                     <div className='flex flex-col gap-4'>
                         <label className="text-xl text-black font-semibold">
                             Password
                         </label>
-                        <input type={showPassword ? "text":"password"} placeholder="password" className="input input-bordered" name='password' required />
+                        <input type={showPassword ? "text":"password"} placeholder="password" className="input input-bordered" name='password' value={formData.password} onChange={handleChange} required />
                         <div className='flex justify-between'>
                             <label>
                                 <a href="#" className="label-text-alt link link-hover text-sm font-medium">Forgot password?</a>
