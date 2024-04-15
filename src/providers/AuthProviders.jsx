@@ -72,6 +72,18 @@ const AuthProviders = ({ children }) => {
             })
     }
 
+    const ProfileUpdate = (name, url) => {
+        updateProfile(auth.currentUser, {
+            displayName: name, photoURL: url
+          }).then(() => {
+            console.log("Profile updated!"); 
+            // ...
+          }).catch((error) => {
+            // An error occurred
+            // ...
+          });
+    }
+
     useEffect(() => {
         const unsSubscribe = onAuthStateChanged(auth, currentUser => {
             console.log('user in the auth state changed', currentUser);
@@ -84,7 +96,7 @@ const AuthProviders = ({ children }) => {
     }, [flag])
 
     const authInfo = {
-        user, createUser, signIn, logout, GoogleSignIn, GithubSignIn, flag
+        user, createUser, signIn, logout, GoogleSignIn, GithubSignIn, flag, ProfileUpdate
     }
     return (
         <AuthContext.Provider value={authInfo}>

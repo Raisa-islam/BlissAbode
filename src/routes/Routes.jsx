@@ -4,6 +4,8 @@ import Root from '../layouts/Root';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
+import UpdateProfile from '../pages/Profile/UpdateProfile';
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
         {
             path:"/register",
             element:<Register></Register>
+        },
+        {
+          path:"update-profile",
+          element:<UpdateProfile></UpdateProfile>
         }
       ]
     },
