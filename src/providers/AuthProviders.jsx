@@ -73,10 +73,12 @@ const AuthProviders = ({ children }) => {
     }
 
     const ProfileUpdate = (name, url) => {
-        updateProfile(auth.currentUser, {
+        updateProfile(user, {
             displayName: name, photoURL: url
           }).then(() => {
             console.log("Profile updated!"); 
+            setFlag(true);
+            setUser(user);
             // ...
           }).catch((error) => {
             // An error occurred

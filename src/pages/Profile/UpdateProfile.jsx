@@ -31,7 +31,7 @@ const UpdateProfile = () => {
             <div className="rounded-full border border-gray-200 border-opacity-50 p-2 bg-slate-100 mb-6">
                 <img
                     alt="User Avatar"
-                    src="https://i.ibb.co/qyFrChk/grill.jpg"
+                    src={user.photoURL}
                     className="rounded-full w-28 lg:w-44 h-28 lg:h-44 object-cover"
                 />
             </div>

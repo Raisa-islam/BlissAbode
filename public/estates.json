@@ -1,0 +1,112 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Modern Apartment in Downtown",
+      "segment_name": "Apartment",
+      "description": "This modern apartment is located in the heart of downtown, offering convenient access to shopping, dining, and entertainment. Featuring spacious living areas, stylish design, and breathtaking city views.",
+      "price": "$500,000",
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "Downtown, City Center",
+      "facilities": ["Spacious living room", "Fitness center", "Swimming pool"],
+      "image_link": "https://example.com/modern_apartment.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Luxury Townhouse in Prime Location",
+      "segment_name": "Townhouse",
+      "description": "Experience luxury living in this stunning townhouse situated in a prime location. Boasting elegant interiors, high-end finishes, and a private garden, this townhouse offers the ultimate in comfort and style.",
+      "price": "$750,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Exclusive Neighborhood",
+      "facilities": ["Private garden", "Gourmet kitchen", "Attached garage"],
+      "image_link": "https://example.com/luxury_townhouse.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Charming Single-Family Home",
+      "segment_name": "Single-family home",
+      "description": "This charming single-family home is perfect for families seeking a cozy retreat. With spacious bedrooms, a fenced backyard, and a quiet neighborhood, it's ideal for those looking for a peaceful living environment.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Suburban Neighborhood",
+      "facilities": ["Fenced backyard", "Modern kitchen", "Fireplace"],
+      "image_link": "https://example.com/single_family_home.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Stylish Apartment with Panoramic Views",
+      "segment_name": "Apartment",
+      "description": "Enjoy panoramic views of the city skyline from this stylish apartment. With floor-to-ceiling windows, sleek design, and top-notch amenities, this apartment offers luxury living at its finest.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "High-Rise Building",
+      "facilities": ["Floor-to-ceiling windows", "Rooftop terrace", "Gym"],
+      "image_link": "https://example.com/stylish_apartment.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Cozy Student Housing Near Campus",
+      "segment_name": "Student housing",
+      "description": "This cozy student housing is conveniently located near the university campus. Offering furnished rooms, study areas, and on-site amenities, it provides a comfortable and supportive environment for students.",
+      "price": "$800 per month",
+      "status": "rent",
+      "area": "Shared rooms",
+      "location": "University District",
+      "facilities": ["Furnished rooms", "Study lounge", "Laundry facilities"],
+      "image_link": "https://example.com/student_housing.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Senior Living Community with Resort Amenities",
+      "segment_name": "Senior living community",
+      "description": "Experience resort-style living in this vibrant senior community. With spacious apartments, chef-prepared meals, and a variety of social activities, it offers a fulfilling and enriching lifestyle for seniors.",
+      "price": "Starting from $3,000 per month",
+      "status": "rent",
+      "area": "Independent living",
+      "location": "Retirement Village",
+      "facilities": ["Chef-prepared meals", "Fitness center", "Social activities"],
+      "image_link": "https://example.com/senior_living_community.jpg"
+    },
+    {
+      "id": 7,
+      "estate_title": "Elegant Vacation Rental by the Beach",
+      "segment_name": "Vacation rental",
+      "description": "Escape to this elegant vacation rental located by the beach. With stunning ocean views, luxurious accommodations, and access to nearby attractions, it's the perfect destination for a memorable getaway.",
+      "price": "$300 per night",
+      "status": "rent",
+      "area": "Beachfront property",
+      "location": "Coastal Town",
+      "facilities": ["Oceanfront balcony", "Private beach access", "Outdoor dining area"],
+      "image_link": "https://example.com/vacation_rental.jpg"
+    },
+    {
+      "id": 8,
+      "estate_title": "Spacious Apartment in Urban Oasis",
+      "segment_name": "Apartment",
+      "description": "Discover urban living at its finest in this spacious apartment nestled within an oasis in the city. Featuring lush gardens, resort-style amenities, and modern interiors, it offers a peaceful retreat in the bustling city center.",
+      "price": "$700,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "City Center",
+      "facilities": ["Lush gardens", "Resort-style amenities", "Modern interiors"],
+      "image_link": "https://example.com/urban_oasis_apartment.jpg"
+    },
+    {
+        "id": 9,
+        "estate_title": "Family-Friendly Townhouse with Park Views",
+        "segment_name": "Townhouse",
+        "description": "Enjoy family living in this spacious townhouse with beautiful park views. Featuring multiple bedrooms, a private backyard, and easy access to nearby amenities, it's perfect for families looking for comfort and convenience.",
+        "price": "$650,000",
+        "status": "sale",
+        "area": "2100 sq ft",
+        "location": "Family-Friendly Neighborhood",
+        "facilities": ["Private backyard", "Multiple bedrooms", "Nearby parks and playgrounds"],
+        "image_link": "https://example.com/townhouse_park_views.jpg"
+    }
+]
+    
+  
