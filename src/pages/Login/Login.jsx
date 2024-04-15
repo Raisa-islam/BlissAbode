@@ -1,11 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 import { Result } from 'postcss';
 import { toast } from 'react-toastify';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn, GoogleSignIn, GithubSignIn} = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false)
+
+    const handleGoogleSignIn = () =>{
+        GoogleSignIn();
+    }
+
+    const handleGithubSignIn = () =>{
+        GithubSignIn();
+    }
 
     const handleLogin = async e =>{
         e.preventDefault();
@@ -29,7 +39,7 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex justify-center items-center">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 p-4">
                 <form onSubmit={handleLogin}>
                     <div className='flex flex-col gap-4'>
                         <label className="text-xl text-black font-semibold">
@@ -42,10 +52,14 @@ const Login = () => {
                         <label className="text-xl text-black font-semibold">
                             Password
                         </label>
-                        <input type="password" placeholder="password" className="input input-bordered" name='password' required />
-                        <label>
-                            <a href="#" className="label-text-alt link link-hover text-sm font-medium">Forgot password?</a>
-                        </label>
+                        <input type={showPassword ? "text":"password"} placeholder="password" className="input input-bordered" name='password' required />
+                        <div className='flex justify-between'>
+                            <label>
+                                <a href="#" className="label-text-alt link link-hover text-sm font-medium">Forgot password?</a>
+                            </label>
+                            <span onClick={()=> setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash/>:<FaEye/>}</span>
+                        </div>
+                       
                     </div>
 
                     <div className="form-control mt-6">
@@ -60,11 +74,11 @@ const Login = () => {
                     <div className='w-1/2'><hr /></div>
                 </div>
                 <div className='flex flex-col mt-5 gap-5'>
-                    <button className="bg-gradient-to-r from-teal-400 to-indigo-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-teal-500 hover:to-indigo-600 transition duration-300 font-bold">
+                    <button onClick={handleGoogleSignIn} className="bg-gradient-to-r from-teal-400 to-indigo-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-teal-500 hover:to-indigo-600 transition duration-300 font-bold">
                         Continue with Google
                     </button>
-                    <button className="bg-gradient-to-r from-purple-400 to-pink-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 transition duration-300 font-bold">
-                        Continue with Facebook
+                    <button onClick={handleGithubSignIn} className="bg-gradient-to-r from-purple-400 to-pink-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 transition duration-300 font-bold">
+                        Continue with GitHub
                     </button>
                 </div>
 

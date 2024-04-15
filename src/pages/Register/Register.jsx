@@ -2,9 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../providers/AuthProviders';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+
     const [formData, setFormData] = useState({
         name: '',
         p_url: '',
@@ -14,18 +16,64 @@ const Register = () => {
     });
     const [errors, setErrors] = useState({});
 
+    const [showPassword, setShowPassword] = useState(false)
+    const [showcPassword, setShowcPassword] = useState(false)
+
     const handleChange = e => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
         // Clear errors when user starts typing in the input field
+        if (e.target.name === 'c_password') {
+            setErrors({
+                ...errors,
+                c_password: ''
+            });
+        } else {
+            setErrors({
+                ...errors,
+                [e.target.name]: ''
+            });
+        }
+    };
+
+    const handlePasswordChange = e => {
+        const { value } = e.target;
+        // Check password length and criteria
+        const passwordError = [];
+        if (value.length < 6) {
+            passwordError.push('Password must be at least 6 characters long');
+        }
+        if (!value.match(/[A-Z]/)) {
+            passwordError.push('Password must have at least one uppercase letter');
+        }
+        if (!value.match(/[a-z]/)) {
+            passwordError.push('Password must have at least one lowercase letter');
+        }
         setErrors({
             ...errors,
-            [e.target.name]: ''
+            password: passwordError.join(', ')
         });
+    };
 
-        
+    const handleConfirmPasswordChange = e => {
+        const { value } = e.target;
+        const { password } = formData;
+    
+        // Check if passwords match
+        if (password !== value) {
+            setErrors({
+                ...errors,
+                c_password: 'Passwords do not match'
+            });
+        } else {
+            // Clear any existing error messages
+            setErrors({
+                ...errors,
+                c_password: ''
+            });
+        }
     };
 
     const handleRegister = e => {
@@ -33,25 +81,17 @@ const Register = () => {
         
         const { name, p_url, email, password, c_password } = formData;
 
-        // Password verification
-        const passwordError = [];
-        if (!password.match(/[A-Z]/)) {
-            passwordError.push('Password must have at least one uppercase letter');
-        }
-        if (!password.match(/[a-z]/)) {
-            passwordError.push('Password must have at least one lowercase letter');
-        }
-        if (password.length < 6) {
-            passwordError.push('Password must be at least 6 characters long');
-        }
+        // Check if passwords match
         if (password !== c_password) {
-            passwordError.push('Passwords do not match');
-        }
-        if (passwordError.length > 0) {
             setErrors({
                 ...errors,
-                password: passwordError.join(', ')
+                c_password: 'Passwords do not match'
             });
+            return;
+        }
+
+        // Check if there are any password errors
+        if (errors.password || errors.c_password) {
             return;
         }
 
@@ -106,7 +146,19 @@ const Register = () => {
                         <label className="text-xl text-black font-semibold">
                             Password
                         </label>
-                        <input type="password" placeholder="password" className="input input-bordered" name='password' value={formData.password} onChange={handleChange} required />
+                        <input 
+                            type={showPassword ? "text":"password"} 
+                            placeholder="password" 
+                            className="input input-bordered" 
+                            name='password' 
+                            value={formData.password} 
+                            onChange={handleChange} 
+                            onBlur={handlePasswordChange} 
+                            required /> 
+                        <div className='flex justify-end'>
+                            <span onClick={()=> setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash/>:<FaEye/>}</span>
+                        </div>
+                        
                         {errors.password && <p className="text-red-500">{errors.password}</p>}
                     </div>
 
@@ -114,10 +166,20 @@ const Register = () => {
                         <label className="text-xl text-black font-semibold">
                             Confirm Password
                         </label>
-                        <input type="password" placeholder="Confirm password" className="input input-bordered" name='c_password' value={formData.c_password} onChange={handleChange} required />
+                        <input 
+                            type={showcPassword ? "text":"password"}  
+                            placeholder="Confirm password" 
+                            className="input input-bordered" 
+                            name='c_password' value={formData.c_password} 
+                            onChange={handleChange} 
+                            onBlur={handleConfirmPasswordChange} required />
+                        <div className='flex justify-end'>
+                            <span onClick={()=> setShowcPassword(!showcPassword)}>{showcPassword ? <FaEyeSlash/>:<FaEye/>}</span>
+                        </div>
+                        {errors.c_password && <p className="text-red-500">{errors.c_password}</p>}
                     </div>
 
-                    <div className="form-control mt-6">
+                <div className="form-control mt-6">
                         <button className="bg-gradient-to-r from-green-400 to-blue-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-600 transition duration-300 font-bold">
                             Register
                         </button>
