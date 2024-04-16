@@ -15,6 +15,7 @@ const router = createBrowserRouter([
         {
             path:"/",
             element:<Home></Home>
+            
         },
         {
             path:"/login",
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             element:<Register></Register>
         },
         {
-          path:"update-profile",
+          path:"/update-profile",
           element:<UpdateProfile></UpdateProfile>
         }
       ]

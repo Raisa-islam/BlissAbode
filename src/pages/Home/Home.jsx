@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,36 +10,50 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import SliderCard from '../../layouts/SliderCard';
+
+
 const Home = () => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('estates.json');
+            const jsonData = await response.json();
+            setData(jsonData);
+
+            console.log(data)
+        };
+
+        fetchData();
+    }, []);
+
     return (
-        <div className=' h-48'>
-            <p>this is home</p>
-            <div className='flex flex-row justify-center items-center border'>
-                <Swiper
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 5</SwiperSlide>
-                    <SwiperSlide>Slide 6</SwiperSlide>
-                    <SwiperSlide>Slide 7</SwiperSlide>
-                    <SwiperSlide>Slide 8</SwiperSlide>
-                    <SwiperSlide>Slide 9</SwiperSlide>
-                </Swiper>
-            </div>
+        <div className='flex flex-row justify-center items-center'>
+
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 7000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                {data.map(d => <SwiperSlide>
+                    {({ isActive }) => (
+                        // <div>Current slide is {isActive ? 'active' : 'not active'}</div>
+                        <SliderCard key={d.id} estate={d} active={isActive}></SliderCard>
+                    )}  </SwiperSlide>)}
+
+            </Swiper>
+
         </div>
     );
 };

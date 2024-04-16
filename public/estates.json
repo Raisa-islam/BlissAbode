@@ -1,112 +1,281 @@
 [
-    {
-      "id": 1,
-      "estate_title": "Modern Apartment in Downtown",
-      "segment_name": "Apartment",
-      "description": "This modern apartment is located in the heart of downtown, offering convenient access to shopping, dining, and entertainment. Featuring spacious living areas, stylish design, and breathtaking city views.",
-      "price": "$500,000",
-      "status": "sale",
-      "area": "1500 sq ft",
-      "location": "Downtown, City Center",
-      "facilities": ["Spacious living room", "Fitness center", "Swimming pool"],
-      "image_link": "https://example.com/modern_apartment.jpg"
+  {
+    "id": 1,
+    "estate_title": "Mountain Vista Retreat: Luxury Living with Scenic Views",
+    "segment_name": "Single-family home",
+    "description": "Experience luxury living in this spacious single-family home boasting breathtaking mountain views. With modern amenities, ample space, and a serene environment, this property offers the perfect blend of comfort and style.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "3000 sq ft",
+    "location": {
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": "123 Main St, Anytown, USA"
     },
-    {
-      "id": 2,
-      "estate_title": "Luxury Townhouse in Prime Location",
-      "segment_name": "Townhouse",
-      "description": "Experience luxury living in this stunning townhouse situated in a prime location. Boasting elegant interiors, high-end finishes, and a private garden, this townhouse offers the ultimate in comfort and style.",
-      "price": "$750,000",
-      "status": "sale",
-      "area": "2500 sq ft",
-      "location": "Exclusive Neighborhood",
-      "facilities": ["Private garden", "Gourmet kitchen", "Attached garage"],
-      "image_link": "https://example.com/luxury_townhouse.jpg"
-    },
-    {
-      "id": 3,
-      "estate_title": "Charming Single-Family Home",
-      "segment_name": "Single-family home",
-      "description": "This charming single-family home is perfect for families seeking a cozy retreat. With spacious bedrooms, a fenced backyard, and a quiet neighborhood, it's ideal for those looking for a peaceful living environment.",
-      "price": "$400,000",
-      "status": "sale",
-      "area": "1800 sq ft",
-      "location": "Suburban Neighborhood",
-      "facilities": ["Fenced backyard", "Modern kitchen", "Fireplace"],
-      "image_link": "https://example.com/single_family_home.jpg"
-    },
-    {
-      "id": 4,
-      "estate_title": "Stylish Apartment with Panoramic Views",
-      "segment_name": "Apartment",
-      "description": "Enjoy panoramic views of the city skyline from this stylish apartment. With floor-to-ceiling windows, sleek design, and top-notch amenities, this apartment offers luxury living at its finest.",
-      "price": "$600,000",
-      "status": "sale",
-      "area": "2000 sq ft",
-      "location": "High-Rise Building",
-      "facilities": ["Floor-to-ceiling windows", "Rooftop terrace", "Gym"],
-      "image_link": "https://example.com/stylish_apartment.jpg"
-    },
-    {
-      "id": 5,
-      "estate_title": "Cozy Student Housing Near Campus",
-      "segment_name": "Student housing",
-      "description": "This cozy student housing is conveniently located near the university campus. Offering furnished rooms, study areas, and on-site amenities, it provides a comfortable and supportive environment for students.",
-      "price": "$800 per month",
-      "status": "rent",
-      "area": "Shared rooms",
-      "location": "University District",
-      "facilities": ["Furnished rooms", "Study lounge", "Laundry facilities"],
-      "image_link": "https://example.com/student_housing.jpg"
-    },
-    {
-      "id": 6,
-      "estate_title": "Senior Living Community with Resort Amenities",
-      "segment_name": "Senior living community",
-      "description": "Experience resort-style living in this vibrant senior community. With spacious apartments, chef-prepared meals, and a variety of social activities, it offers a fulfilling and enriching lifestyle for seniors.",
-      "price": "Starting from $3,000 per month",
-      "status": "rent",
-      "area": "Independent living",
-      "location": "Retirement Village",
-      "facilities": ["Chef-prepared meals", "Fitness center", "Social activities"],
-      "image_link": "https://example.com/senior_living_community.jpg"
-    },
-    {
-      "id": 7,
-      "estate_title": "Elegant Vacation Rental by the Beach",
-      "segment_name": "Vacation rental",
-      "description": "Escape to this elegant vacation rental located by the beach. With stunning ocean views, luxurious accommodations, and access to nearby attractions, it's the perfect destination for a memorable getaway.",
-      "price": "$300 per night",
-      "status": "rent",
-      "area": "Beachfront property",
-      "location": "Coastal Town",
-      "facilities": ["Oceanfront balcony", "Private beach access", "Outdoor dining area"],
-      "image_link": "https://example.com/vacation_rental.jpg"
-    },
-    {
-      "id": 8,
-      "estate_title": "Spacious Apartment in Urban Oasis",
-      "segment_name": "Apartment",
-      "description": "Discover urban living at its finest in this spacious apartment nestled within an oasis in the city. Featuring lush gardens, resort-style amenities, and modern interiors, it offers a peaceful retreat in the bustling city center.",
-      "price": "$700,000",
-      "status": "sale",
-      "area": "2200 sq ft",
-      "location": "City Center",
-      "facilities": ["Lush gardens", "Resort-style amenities", "Modern interiors"],
-      "image_link": "https://example.com/urban_oasis_apartment.jpg"
-    },
-    {
-        "id": 9,
-        "estate_title": "Family-Friendly Townhouse with Park Views",
-        "segment_name": "Townhouse",
-        "description": "Enjoy family living in this spacious townhouse with beautiful park views. Featuring multiple bedrooms, a private backyard, and easy access to nearby amenities, it's perfect for families looking for comfort and convenience.",
-        "price": "$650,000",
-        "status": "sale",
-        "area": "2100 sq ft",
-        "location": "Family-Friendly Neighborhood",
-        "facilities": ["Private backyard", "Multiple bedrooms", "Nearby parks and playgrounds"],
-        "image_link": "https://example.com/townhouse_park_views.jpg"
+    "facilities": [
+      "Scenic views",
+      "Modern amenities",
+      "Spacious interiors"
+    ],
+    "image_link": "https://i.ibb.co/sq2L5Jr/ground-beef-tacos-10.jpg",
+    "beds": 4,
+    "baths": 3,
+    "short_description": "Luxurious single-family home with stunning mountain views, modern amenities, and generous living space for comfort and style.",
+    "features": {
+      "parking": true,
+      "security": true,
+      "cctv": false,
+      "conference_hall": false,
+      "heating": true,
+      "cooling": true
     }
+  },
+  {
+    "id": 2,
+    "estate_title": "Urban Elegance: Luxurious Apartment in Downtown District",
+    "segment_name": "Apartment",
+    "description": "Indulge in urban living at its finest with this luxurious apartment situated in the heart of the downtown district. With high-end finishes, panoramic city views, and convenient access to amenities, this property offers a lifestyle of sophistication and convenience.",
+    "price": "$1,200,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": {
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "address": "456 Elm St, Metropolis, USA"
+    },
+    "facilities": [
+      "Panoramic city views",
+      "High-end finishes",
+      "Prime location"
+    ],
+    "image_link": "https://example.com/luxurious_apartment_downtown.jpg",
+    "beds": 2,
+    "baths": 2,
+    "short_description": "Urban luxury in a high-end downtown apartment with panoramic city views and top-tier finishes for sophisticated living.",
+    "features": {
+      "parking": true,
+      "security": true,
+      "cctv": true,
+      "conference_hall": false,
+      "heating": true,
+      "cooling": true
+    }
+  },
+  {
+    "id": 3,
+    "estate_title": "Historic Charm: Cozy Townhouse in Quaint Neighborhood",
+    "segment_name": "Townhouse",
+    "description": "Discover charm and character in this cozy townhouse nestled within a historic neighborhood. Featuring period details, a private courtyard, and proximity to cultural attractions, this property offers a unique blend of comfort and heritage.",
+    "price": "$500,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "address": "789 Oak St, Heritage Town, UK"
+    },
+    "facilities": [
+      "Private courtyard",
+      "Period details",
+      "Cultural attractions nearby"
+    ],
+    "image_link": "https://example.com/cozy_townhouse_historic.jpg",
+    "beds": 3,
+    "baths": 2,
+    "short_description": "Charming and cozy townhouse with period details, a private courtyard, and nestled in a historic neighborhood with cultural attractions.",
+    "features": {
+      "parking": false,
+      "security": false,
+      "cctv": false,
+      "conference_hall": false,
+      "heating": true,
+      "cooling": false
+    }
+  },
+  {
+    "id": 4,
+    "estate_title": "City Chic: Modern Loft with Industrial Aesthetic",
+    "segment_name": "Apartment",
+    "description": "Embrace contemporary living in this modern loft boasting industrial chic design. With open-concept living spaces, exposed brick walls, and rooftop access, this property offers a trendy urban lifestyle in the heart of the city.",
+    "price": "$950,000",
+    "status": "sale",
+    "area": "1600 sq ft",
+    "location": {
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": "101 Maple Ave, Downtown, Cityville, USA"
+    },
+    "facilities": [
+      "Industrial chic design",
+      "Open-concept living",
+      "Rooftop access"
+    ],
+    "image_link": "https://example.com/modern_loft_industrial_chic.jpg",
+    "beds": 1,
+    "baths": 2,
+    "short_description": "Stylish modern loft with an industrial chic aesthetic, open-concept spaces, and rooftop access in the city's heart.",
+    "features": {
+      "parking": true,
+      "security": true,
+      "cctv": true,
+      "conference_hall": false,
+      "heating": true,
+      "cooling": true
+    }
+  },
+  {
+    "id": 5,
+    "estate_title": "Seaside Serenity: Tranquil Retreat in Coastal Paradise",
+    "segment_name": "Vacation rental",
+    "description": "Escape to paradise with this tranquil retreat nestled along the pristine coastline. Featuring panoramic ocean views, private beach access, and luxurious amenities, this property offers the ultimate getaway for relaxation and rejuvenation.",
+    "price": "$300 per night",
+    "status": "rent",
+    "area": "2200 sq ft",
+    "location": {
+      "latitude": 33.9416,
+      "longitude": -118.4085,
+      "address": "789 Coastal Blvd, Seaview Haven, USA"
+    },
+    "facilities": [
+      "Panoramic ocean views",
+      "Private beach access",
+      "Luxurious amenities"
+    ],
+    "image_link": "https://example.com/tranquil_retreat_coastal.jpg",
+    "beds": 3,
+    "baths": 3,
+    "short_description": "Secluded coastal retreat offering panoramic ocean views, private beach access, and luxury amenities for a serene getaway.",
+    "features": {
+      "parking": true,
+      "security": true,
+      "cctv": false,
+      "conference_hall": false,
+      "heating": false,
+      "cooling": true
+    }
+  },
+  {
+    "id": 6,
+    "estate_title": "Campus Convenience: Student Housing Near University",
+    "segment_name": "Student housing",
+    "description": "Experience convenient student living with this housing option located near the campus. With furnished accommodations, study areas, and easy access to university facilities, this property offers a conducive environment for academic success.",
+    "price": "$1,200 per month",
+    "status": "rent",
+    "area": "1000 sq ft",
+    "location": {
+      "latitude": 34.0224,
+      "longitude": -118.2851,
+      "address": "456 College St, Campus Town, USA"
+    },
+    "facilities": [
+      "Furnished accommodations",
+      "Study areas",
+      "Close to campus"
+    ],
+    "image_link": "https://example.com/student_housing_near_campus.jpg",
+    "beds": 2,
+    "baths": 1,
+    "short_description": "Convenient and furnished student housing with study areas, located near the campus for easy university access.",
+    "features": {
+      "parking": false,
+      "security": true,
+      "cctv": true,
+      "conference_hall": false,
+      "heating": true,
+      "cooling": false
+    }
+  },
+  {
+    "id": 7,
+    "estate_title": "Resort Living: Senior Community with Vibrant Amenities",
+    "segment_name": "Senior living community",
+    "description": "Enjoy resort-style living in this vibrant senior community offering a range of amenities and services. With spacious residences, wellness programs, and social activities, this property provides a fulfilling lifestyle for active seniors.",
+    "price": "$3,000 per month",
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": {
+      "latitude": 33.6839,
+      "longitude": -117.7947,
+      "address": "101 Sunset Blvd, Senior Oasis, USA"
+    },
+    "facilities": [
+      "Resort amenities",
+      "Wellness programs",
+      "Social activities"
+    ],
+    "image_link": "https://example.com/senior_living_community_resort.jpg",
+    "beds": 2,
+    "baths": 2,
+    "short_description": "Active senior living with resort amenities, wellness programs, and social activities in a spacious community setting.",
+    "features": {
+      "parking": true,
+      "security": true,
+      "cctv": true,
+      "conference_hall": true,
+      "heating": true,
+      "cooling": true
+    }
+  },
+  {
+    "id": 8,
+    "estate_title": "Elegant Retreat: Retirement Villa with Scenic Gardens",
+    "segment_name": "Senior living community",
+    "description": "Experience retirement in elegance with this villa featuring scenic gardens and upscale amenities. With spacious living areas, gourmet dining options, and a serene environment, this property offers a luxurious lifestyle for discerning seniors.",
+    "price": "$1,500,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": {
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "address": "789 Garden Way, Senior Haven, USA"
+    },
+    "facilities": [
+      "Scenic gardens",
+      "Upscale amenities",
+      "Gourmet dining options"
+    ],
+    "image_link": "https://example.com/elegant_retirement_villa_gardens.jpg",
+    "beds": 2,
+    "baths": 2,
+    "short_description": "Active senior living with resort amenities, wellness programs, and social activities in a spacious community setting.",
+    "features": {
+      "parking": true,
+      "security": true,
+      "cctv": true,
+      "conference_hall": true,
+      "heating": true,
+      "cooling": true
+    }
+  },
+  {
+    "id": 9,
+    "estate_title": "Parkside Haven: Family-Friendly Townhouse with Park Views",
+    "segment_name": "Townhouse",
+    "description": "Enjoy family living in this spacious townhouse with beautiful park views. Featuring multiple bedrooms, a private backyard, and easy access to nearby amenities, it's perfect for families looking for comfort and convenience.",
+    "price": "$650,000",
+    "status": "sale",
+    "area": "2100 sq ft",
+    "location": {
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "address": "101 Parkview Dr, Family Retreat, USA"
+    },
+    "facilities": [
+      "Multiple bedrooms",
+      "Private backyard",
+      "Nearby amenities"
+    ],
+    "image_link": "https://example.com/family_friendly_townhouse_park_views.jpg",
+    "beds": 2,
+    "baths": 2,
+    "short_description": "Active senior living with resort amenities, wellness programs, and social activities in a spacious community setting.",
+    "features": {
+      "parking": true,
+      "security": true,
+      "cctv": true,
+      "conference_hall": true,
+      "heating": true,
+      "cooling": true
+    }
+  }
 ]
-    
-  
