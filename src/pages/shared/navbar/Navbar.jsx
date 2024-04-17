@@ -16,8 +16,11 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/abs">Home</NavLink></li>
+        <li><NavLink to="/favourites">Favourites</NavLink></li>
         <li><NavLink to="/update-profile">Update Profile</NavLink></li>
+        <li className='md:hidden'><Link to='/'> <button onClick={handleSignOut} className="bg-gradient-to-r from-green-400 to-blue-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-600 transition duration-300 font-bold">
+                                Sign out
+                            </button></Link></li>
     </>
 
     return (

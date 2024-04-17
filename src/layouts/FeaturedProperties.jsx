@@ -8,7 +8,8 @@ import { LiaBathSolid } from "react-icons/lia";
 import { TbRulerMeasure } from "react-icons/tb";
 import { MdOutlineGarage } from "react-icons/md";
 import { Link } from 'react-router-dom';
-
+import { FcLike } from "react-icons/fc";
+import 'react-toastify/dist/ReactToastify.css';
 
 const FeaturedProperties = ({ estate }) => {
     useEffect(() => {
@@ -41,6 +42,7 @@ const FeaturedProperties = ({ estate }) => {
                     <hr />
                     <div className='mt-5 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0'>
                         <div className=' text-lg md:text-xl font-semibold'>{price}</div>
+                        <div><FcLike className='text-2xl'/></div>
                         <Link to={`/view-details/${id}`}>
                         <div>
                             <button className="bg-blue-400 text-white px-6 py-3 rounded-lg hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-600 transition duration-300 font-bold">
@@ -48,12 +50,15 @@ const FeaturedProperties = ({ estate }) => {
                                 <p>View Details</p>
 
                             </button>
+            
                         </div>
                         </Link>
-                        
+                       
                     </div>
 
                 </div>
+
+                
             </div>
 
         </>

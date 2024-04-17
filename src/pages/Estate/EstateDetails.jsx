@@ -12,6 +12,9 @@ import { BiCctv } from "react-icons/bi";
 import { SiAdguard } from "react-icons/si";
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+import { FcLike } from "react-icons/fc";
+import 'react-toastify/dist/ReactToastify.css';
 
 const EstateDetails = () => {
     const data = useLoaderData();
@@ -74,9 +77,9 @@ const EstateDetails = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-col lg:flex-row lg:gap-4'>
+                <div className='flex flex-col  lg:gap-4'>
 
-                    <div className='lg:w-1/2'>
+                    <div className=''>
                         <div className='shadow-xl p-4 bg-white mt-8'>
                             <div>
                                 <p className='text-xl font-semibold text-red-500 mb-2'>Property Details</p>
@@ -110,8 +113,8 @@ const EstateDetails = () => {
                             <p className='text-xl font-semibold text-red-500 mt-2'>Location</p>
                             <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
                         </div>
-                        {/* <div className="w-1/2 ">
-                        <MapContainer center={position} zoom={5} scrollWheelZoom={false} className=" w-1/2 h-96 md:h-80">
+                        <div className="">
+                        <MapContainer center={position} zoom={5} scrollWheelZoom={false} className="max-w-[600px] md:max-w-[900px] lg:max-w-[1600px] h-96 lg:h-[500px]">
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -122,7 +125,7 @@ const EstateDetails = () => {
                                 </Popup>
                             </Marker>
                         </MapContainer> 
-                    </div> */}
+                    </div>
                     </div>
 
                 </div>
