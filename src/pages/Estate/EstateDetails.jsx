@@ -24,7 +24,7 @@ const EstateDetails = () => {
     const estate = data.find(item => item.id === idInt);
     console.log(estate);
 
-    const { estate_title, image_link, location, beds, baths, area, features, price, status, description, segment_name } = estate;
+    const { estate_title, image_link, location, beds, baths, area, features, price, status, description, segment_name, facilities } = estate;
     const position = [location.latitude, location.longitude];
     console.log(location.latitude, location.longitude)
 
@@ -36,22 +36,33 @@ const EstateDetails = () => {
 
                     <div>
                         <div className='flex flex-col md:flex-row gap-4'>
-                            <p className='font-bold text-lg'>{estate_title}</p>
+                            <div>
+                                <p className='font-bold text-lg lg:text-2xl'>{estate_title}</p>
+                                <div><p className='font-semibold text-md lg:text-xl'>Category : <span className='font-bold'>{segment_name}</span></p></div>
+                            </div>
+
                             <div className='rounded-xl bg-red-600 text-white font-semibold w-20 h-8 flex flex-row justify-center items-center'>For {status}</div>
                         </div>
 
 
-                        <div className='flex flex-row gap-3 items-center mt-3 text-[#03071299] text-md md:text-lg'><IoLocationSharp />{location.address}</div>
+                        <div className='flex flex-row gap-3 items-center mt-4 text-[#03071299] text-md lg:text-lg md:text-lg'><IoLocationSharp />{location.address}</div>
 
 
                     </div>
                     <div>
-                        <div className='text-red-600 font-semibold text-lg'>{price}</div>
+                        <div className='text-red-600 font-semibold text-lg lg:text-xl'>{price}</div>
 
                     </div>
 
                 </div>
-
+                <div className='mt-8 flex flex-row gap-4'>
+                    <p className='text-xl font-semibold text-[#030712]'>Features: </p>
+                    <div className='grid grid-cols-1 gap-3 md:grid-cols-3'>
+                        {facilities.map((item)=><div className='rounded-xl bg-green-100 text-blue-600 font-medium px-3 py-1'>
+                            # {item}
+                        </div>)}
+                    </div>
+                </div>
                 <div className='shadow-xl p-4 bg-white mt-4'>
                     <div>
                         <p className='text-xl font-semibold text-red-500 mb-2'>Gallary</p>
@@ -63,40 +74,44 @@ const EstateDetails = () => {
                     </div>
                 </div>
 
-                <div className='shadow-xl p-4 bg-white mt-8'>
-                    <div>
-                        <p className='text-xl font-semibold text-red-500 mb-2'>Description</p>
-                        <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
+                <div className='flex flex-col lg:flex-row lg:gap-4'>
 
+                    <div className='lg:w-1/2'>
+                        <div className='shadow-xl p-4 bg-white mt-8'>
+                            <div>
+                                <p className='text-xl font-semibold text-red-500 mb-2'>Property Details</p>
+                                <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
+
+                                <div className='text-[#030712] font-medium text-lg grid grid-cols-1 gap-2'>
+                                    <p className=''>Property Id : <span className='font-semibold'>{id}</span></p>
+                                    <p>Property Type : <span className='font-semibold'>{segment_name}</span></p>
+                                    <p>Property Status :  <span className='font-semibold'> For {status}</span></p>
+                                    <p>Property Price : <span className='font-semibold'>{price}</span></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div className='shadow-xl p-4 bg-white mt-8'>
+                            <div>
+                                <p className='text-xl font-semibold text-red-500 mb-2'>Description</p>
+                                <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
+
+                                <div>
+                                    {description}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className='shadow-xl p-4 bg-white mt-8'>
                         <div>
-                            {description}
+                            <p className='text-xl font-semibold text-red-500 mt-2'>Location</p>
+                            <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
                         </div>
-                    </div>
-                </div>
-
-                <div className='shadow-xl p-4 bg-white mt-8'>
-                    <div>
-                        <p className='text-xl font-semibold text-red-500 mb-2'>Property Details</p>
-                        <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
-
-                        <div className='text-[#030712] font-medium text-lg grid grid-cols-1 gap-2 md:grid-cols-2'>
-                            <p className=''>Property Id : <span className='font-semibold'>{id}</span></p>
-                            <p>Property Type : <span className='font-semibold'>{segment_name}</span></p>
-                            <p>Property Status :  <span className='font-semibold'> For {status}</span></p>
-                            <p>Property Price : <span className='font-semibold'>{price}</span></p>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div className='shadow-xl p-4 bg-white mt-8'>
-                    <div>
-                        <p className='text-xl font-semibold text-red-500 mt-2'>Location</p>
-                        <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
-                    </div>
-                    <div className="w-full h-96 md:h-80 lg:h-96">
-                        <MapContainer center={position} zoom={5} scrollWheelZoom={false} className="w-full h-full">
+                        {/* <div className="w-1/2 ">
+                        <MapContainer center={position} zoom={5} scrollWheelZoom={false} className=" w-1/2 h-96 md:h-80">
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -106,14 +121,21 @@ const EstateDetails = () => {
                                     {location.address}
                                 </Popup>
                             </Marker>
-                        </MapContainer>
+                        </MapContainer> 
+                    </div> */}
                     </div>
+
                 </div>
+
+
+
+
+
 
 
                 <div className='shadow-xl p-4 bg-white mt-8'>
                     <div>
-                        <p className='text-xl font-semibold text-red-500 mt-2'>Features</p>
+                        <p className='text-xl font-semibold text-red-500 mt-2'>Facilities</p>
                         <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
 
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
@@ -160,6 +182,13 @@ const EstateDetails = () => {
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
             </div>
         </div>
 
