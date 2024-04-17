@@ -3,6 +3,7 @@ import { HiLink } from "react-icons/hi";
 import { FaUser } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { AuthContext } from '../../providers/AuthProviders';
+import { toast } from 'react-toastify';
 
 const UpdateProfile = () => {
     const { user, ProfileUpdate } = useContext(AuthContext);
@@ -24,16 +25,21 @@ const UpdateProfile = () => {
         console.log(formData);
         // Call the ProfileUpdate function with formData
         ProfileUpdate(formData.name, formData.url);
+        toast.success("Profile Updated Successfully");
     };
 
     return (
-        <div className='flex flex-col justify-center items-center p-4 lg:w-1/2 mx-auto mt-6 bg-white'>
+        <div className='flex flex-col justify-center items-center p-4 lg:w-1/2 mx-auto mt-6 bg-white pb-12'>
             <div className="rounded-full border border-gray-200 border-opacity-50 p-2 bg-slate-100 mb-6">
                 <img
                     alt="User Avatar"
                     src={user.photoURL}
                     className="rounded-full w-28 lg:w-44 h-28 lg:h-44 object-cover"
                 />
+            </div>
+            <div className='flex flex-col justify-center items-center gap-3 mb-5 text-[#03071299] font-medium'>
+                <p>{user.displayName}</p>
+                <p>{user.email}</p>
             </div>
             <hr className=' bg-black w-full' />
             <div className='mt-6 flex flex-col gap-6 lg:w-2/3 md:w-4/5 w-10/12'>

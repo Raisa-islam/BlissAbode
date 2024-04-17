@@ -6,12 +6,12 @@ import Footer from '../pages/shared/footer/Footer';
 const Root = () => {
     return (
         <div>
-            <div className="container mx-auto">
-                <Navbar></Navbar>
-                
-            </div>
+
+            <Navbar></Navbar>
+
+
             <Outlet></Outlet>
-           
+
             <Footer></Footer>
         </div>
     );

@@ -22,7 +22,7 @@ const Home = () => {
 
 
     return (
-        <div>
+        <div className='pb-12'>
             <div className='flex flex-row justify-center items-center'>
 
                 <Swiper

@@ -32,7 +32,7 @@ const EstateDetails = () => {
     console.log(location.latitude, location.longitude)
 
     return (
-        <div className='bg-slate-200'>
+        <div className='bg-slate-200 pb-12'>
             <div className='container mx-auto pt-12 '>
                 <div className='flex md:flex-row justify-between'>
 
@@ -61,7 +61,7 @@ const EstateDetails = () => {
                 <div className='mt-8 flex flex-row gap-4'>
                     <p className='text-xl font-semibold text-[#030712]'>Features: </p>
                     <div className='grid grid-cols-1 gap-3 md:grid-cols-3'>
-                        {facilities.map((item)=><div className='rounded-xl bg-green-100 text-blue-600 font-medium px-3 py-1'>
+                        {facilities.map((item) => <div className='rounded-xl bg-green-100 text-blue-600 font-medium px-3 py-1'>
                             # {item}
                         </div>)}
                     </div>
@@ -114,18 +114,18 @@ const EstateDetails = () => {
                             <div className='h-[3px] w-12 bg-red-500 mb-4'></div>
                         </div>
                         <div className="">
-                        <MapContainer center={position} zoom={5} scrollWheelZoom={false} className="max-w-[600px] md:max-w-[900px] lg:max-w-[1600px] h-96 lg:h-[500px]">
-                            <TileLayer
-                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-                            <Marker position={position}>
-                                <Popup>
-                                    {location.address}
-                                </Popup>
-                            </Marker>
-                        </MapContainer> 
-                    </div>
+                            <MapContainer center={position} zoom={5} scrollWheelZoom={false} className="max-w-[600px] md:max-w-[900px] lg:max-w-[1600px] h-96 lg:h-[500px]">
+                                <TileLayer
+                                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                />
+                                <Marker position={position}>
+                                    <Popup>
+                                        {location.address}
+                                    </Popup>
+                                </Marker>
+                            </MapContainer>
+                        </div>
                     </div>
 
                 </div>
