@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { IoIosArrowDropright } from "react-icons/io";
 import 'animate.css';
 
-const SliderCard = ({ estate, active }) => {
+const SliderCard = ({ estate }) => {
    
     const { id,
         estate_title,
@@ -13,13 +13,10 @@ const SliderCard = ({ estate, active }) => {
         beds,
         baths,
         image_link } = estate;
-        console.log(active, id)
     return (
         <>
-            {
-                active && 
                 <div className="relative">
-                    <img src={image_link} class="w-full h-[400px] md:h-[600px]" alt="Your Image" />
+                    <img src={image_link} className="w-full h-[400px] md:h-[600px]" alt="Your Image" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-700 to-transparent flex flex-col justify-center">
                         <div className='text-white p-10 lg:p-14 lg:ml-8'>
                             <div className='flex flex-col gap-2 animate__animated animate__backInLeft'>
@@ -40,9 +37,8 @@ const SliderCard = ({ estate, active }) => {
                         </div>
                     </div>
                 </div>
-            }
 
-
+                
         </>
     );
 };
