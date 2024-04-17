@@ -9,13 +9,25 @@ import { TbRulerMeasure } from "react-icons/tb";
 import { MdOutlineGarage } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { FcLike } from "react-icons/fc";
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { saveAddProperty } from '../Utility/localstorage';
 
 const FeaturedProperties = ({ estate }) => {
     useEffect(() => {
         AOS.init();
     }, []);
     const { id, estate_title, image_link, location, beds, baths, area, features, price, segment_name, status } = estate;
+    const addFav = ()=>{
+        if(saveAddProperty(parseInt(id))){
+            console.log("here")
+            toast('This Property added to Favorite list!')
+        }
+        else{
+            console.log("there")
+            toast('This Property is already in Favorite list!')
+        }
+        
+    } 
 
     return (
         <>
@@ -42,7 +54,7 @@ const FeaturedProperties = ({ estate }) => {
                     <hr />
                     <div className='mt-5 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0'>
                         <div className=' text-lg md:text-xl font-semibold'>{price}</div>
-                        <div><FcLike className='text-2xl'/></div>
+                        <div><FcLike onClick={addFav} className='text-2xl'/></div>
                         <Link to={`/view-details/${id}`}>
                         <div>
                             <button className="bg-blue-400 text-white px-6 py-3 rounded-lg hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-600 transition duration-300 font-bold">

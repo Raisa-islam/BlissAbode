@@ -7,6 +7,7 @@ import Register from '../pages/Register/Register';
 import UpdateProfile from '../pages/Profile/UpdateProfile';
 import EstateDetails from '../pages/Estate/EstateDetails';
 import PrivateRoutes from './PrivateRoutes';
+import Favorites from '../pages/Favourites/Favorites';
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         {
           path:"/view-details/:id",
           element:<PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>,
+          loader: () => fetch('/estates.json')
+        },
+        {
+          path:"/favorites",
+          element:<PrivateRoutes><Favorites></Favorites></PrivateRoutes>,
           loader: () => fetch('/estates.json')
         }
       ]
