@@ -1,11 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const Login = () => {
-    const {signIn, GoogleSignIn, GithubSignIn} = useContext(AuthContext);
+const Login = () => { 
+    const {user, signIn, GoogleSignIn, GithubSignIn} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
@@ -21,13 +24,21 @@ const Login = () => {
 
     const handleGoogleSignIn = () =>{
         GoogleSignIn();
+        //navigate after log in
+        //navigate(location?.state ? location.state : "/")
        
     }
 
     const handleGithubSignIn = () =>{
         GithubSignIn();
-        
+        //navigate after log in
+        //navigate(location?.state ? location.state : "/")
     }
+    useEffect(() => {
+        if (user) {
+            navigate(location?.state ? location.state : "/");
+        }
+    }, [user]);
 
     const handleLogin = async e =>{
         e.preventDefault();
@@ -42,6 +53,8 @@ const Login = () => {
                     email: '',
                     password: ''
                 });
+                //navigate after log in
+                navigate(location?.state ? location.state : "/")
                
             })
             .catch(error =>{
