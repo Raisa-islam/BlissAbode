@@ -24,6 +24,11 @@ const Favorites = () => {
         }
     }, []);
 
+    const handleDeleteItem = (id) => {
+        // Remove the item with the given id from the favProperty state
+        setFavProperty(prevState => prevState.filter(item => item.id !== id));
+    }
+
     return (
         <div className='container mx-auto mt-12 max-w-[80%] overflow-hidden'>
             <Helmet>
@@ -38,7 +43,7 @@ const Favorites = () => {
         <div className='grid lg:grid-cols-2 gap-6 mt-12 p-4 lg:p-0'>
 
             {
-                favProperty.map((item) => <FavFeatured key={item.id} estate={item}></FavFeatured>)
+                favProperty.map((item) => <FavFeatured key={item.id} estate={item} onDelete={handleDeleteItem}></FavFeatured>)
             }
 
         </div>

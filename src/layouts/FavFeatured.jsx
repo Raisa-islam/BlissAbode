@@ -12,7 +12,7 @@ import { FcDislike } from "react-icons/fc";
 import { toast } from 'react-toastify';
 import { removeFromFavoriteList, saveAddProperty } from '../Utility/localstorage';
 import { AuthContext } from '../providers/AuthProviders';
-const FavFeatured = ({ estate }) => {
+const FavFeatured = ({ estate, onDelete }) => {
     const {user} = useContext(AuthContext);
     useEffect(() => {
         AOS.init();
@@ -22,7 +22,7 @@ const FavFeatured = ({ estate }) => {
 
 
         removeFromFavoriteList(parseInt(id), user.email);
-
+        onDelete(id);
         console.log("here")
         toast('This Property is Deleted from Favorite list!')
 
