@@ -112,9 +112,9 @@ const Login = () => {
                         Continue with Google
                     </button>
 
-                    <button onClick={handleFacebookSignIn} className="bg-gradient-to-r from-purple-400 to-pink-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 transition duration-300 font-bold">
+                    {/* <button onClick={handleFacebookSignIn} className="bg-gradient-to-r from-purple-400 to-pink-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 transition duration-300 font-bold">
                         Continue with Facebook
-                    </button>
+                    </button> */}
 
                     <button onClick={handleGithubSignIn} className="bg-gradient-to-r from-purple-400 to-pink-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 transition duration-300 font-bold">
                         Continue with GitHub

@@ -81,6 +81,7 @@ const AuthProviders = ({ children }) => {
         signInWithPopup(auth, githubProvider)
             .then(result => {
                 const loggedUser = result.user
+                
                 console.log(loggedUser);
                 setUser(loggedUser);
             })
