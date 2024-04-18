@@ -122,7 +122,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex justify-center items-center container mx-auto">
+        <div className="min-h-screen flex justify-center items-center container mx-auto overflow-hidden">
             <Helmet>
                 <title>Bliss Abode | Register</title>
             </Helmet>

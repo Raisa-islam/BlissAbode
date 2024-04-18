@@ -16,7 +16,7 @@ const SliderCard = ({ estate }) => {
         image_link } = estate;
     return (
         <>
-            <div className="relative">
+            <div className="relative w-full">
                 <img src={image_link} className="w-full h-[400px] md:h-[600px]" alt="Your Image" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-700 to-transparent flex flex-col justify-center">
                     <div className='text-white p-10 lg:p-14 lg:ml-8'>

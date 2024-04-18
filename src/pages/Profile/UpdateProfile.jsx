@@ -30,7 +30,7 @@ const UpdateProfile = () => {
     };
 
     return (
-        <div className='flex flex-col justify-center items-center p-4 lg:w-1/2 container mx-auto mt-6 bg-white pb-12 max-w-[80%]'>
+        <div className='flex flex-col justify-center items-center p-4 lg:w-1/2 container mx-auto mt-6 bg-white pb-12 max-w-[80%] overflow-hidden'>
             <Helmet>
                 <title>Bliss Abode | Update Profile</title>
             </Helmet>
@@ -48,7 +48,7 @@ const UpdateProfile = () => {
             <hr className=' bg-black w-full' />
             <div className='mt-6 flex flex-col gap-6 lg:w-2/3 md:w-4/5 w-10/12'>
                 <label className="input input-bordered flex items-center gap-2  border-black border-opacity-50">
-                    <FaUser />
+                    <FaUser className='' />
                     <input
                         type="text"
                         className="grow"

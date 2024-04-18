@@ -23,11 +23,11 @@ const Home = () => {
 
 
     return (
-        <div className='pb-12'>
+        <div className='pb-12 overflow-hidden'>
             <Helmet>
                 <title>Bliss Abode | Home</title>
             </Helmet>
-            <div className='flex flex-row justify-center items-center max-w-full'>
+            <div className='flex flex-row justify-center items-center w-full'>
 
                 <Swiper
                     spaceBetween={30}

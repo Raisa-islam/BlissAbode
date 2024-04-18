@@ -33,7 +33,7 @@ const EstateDetails = () => {
     console.log(location.latitude, location.longitude)
 
     return (
-        <div className='bg-slate-200 pb-12'>
+        <div className='bg-slate-200 pb-12 overflow-hidden'>
             <Helmet>
                 <title>Bliss Abode | Property Details ${id}</title>
             </Helmet>

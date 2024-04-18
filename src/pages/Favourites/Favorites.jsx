@@ -25,7 +25,7 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div className='container mx-auto mt-12 max-w-[80%]'>
+        <div className='container mx-auto mt-12 max-w-[80%] overflow-hidden'>
             <Helmet>
                 <title>Bliss Abode | Favorites</title>
             </Helmet>
