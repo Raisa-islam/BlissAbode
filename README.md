@@ -14,7 +14,7 @@ Live Site Url- [https://b9a9-92593.web.app/]
 
 Feature-
 
-- Offers multiple authentication options, using Firebase, including Email and password, Google, and GitHub, ensures a seamless and secure login experience for users, accommodating their preferences and convenience
+- Offers multiple authentication options, using Firebase, including Email and password, Google, and GitHub, ensures a seamless and secure login experience for users, accommodating their preferences and convenience. If user are logged in they can't access log in and registration page
 
 - Users can explore a curated list of properties with essential details and images right from the homepage, making it easy to browse through available options.
 

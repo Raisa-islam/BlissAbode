@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate  } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../providers/AuthProviders';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from 'react-helmet';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const {user, createUser } = useContext(AuthContext);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -19,6 +19,8 @@ const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false)
     const [showcPassword, setShowcPassword] = useState(false)
+    const location = useLocation();
+    const navigate = useNavigate(); 
 
     const handleChange = e => {
         setFormData({
@@ -38,6 +40,12 @@ const Register = () => {
             });
         }
     };
+
+    useEffect(() => {
+        if (user) {
+            navigate(location?.state ? location.state : "/");
+        }
+    }, [user]);
 
     const handlePasswordChange = e => {
         const { value } = e.target;

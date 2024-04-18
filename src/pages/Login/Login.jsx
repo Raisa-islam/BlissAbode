@@ -63,12 +63,13 @@ const Login = () => {
                
             })
             .catch(error =>{
-                toast.error('Credential does not match');
+                toast.error('Credentials do not match');
                 console.error(error);
             });
     }
 
     return (
+        
         <div className="min-h-screen flex justify-center items-center container mx-auto overflow-hidden">
             <Helmet>
                 <title>Bliss Abode | Sign in</title>
