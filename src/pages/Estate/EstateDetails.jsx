@@ -16,8 +16,19 @@ import 'leaflet/dist/leaflet.css'
 import { FcLike } from "react-icons/fc";
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
+import L, { divIcon } from 'leaflet';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
 
 const EstateDetails = () => {
+
+    const markerIconConst = L.icon({
+        iconUrl: markerIcon,
+        iconRetinaUrl: markerIcon,
+        iconAnchor: [5, 55],
+        popupAnchor: [10, -44],
+        iconSize: [25, 55],
+      });
+
     const data = useLoaderData();
     const { id } = useParams();
 
@@ -123,7 +134,7 @@ const EstateDetails = () => {
                                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 />
-                                <Marker position={position}>
+                                <Marker icon={markerIconConst}  position={position}>
                                     <Popup>
                                         {location.address}
                                     </Popup>
