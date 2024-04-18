@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -11,8 +11,9 @@ import { Link } from 'react-router-dom';
 import { FcDislike } from "react-icons/fc";
 import { toast } from 'react-toastify';
 import { removeFromFavoriteList, saveAddProperty } from '../Utility/localstorage';
+import { AuthContext } from '../providers/AuthProviders';
 const FavFeatured = ({ estate }) => {
-
+    const {user} = useContext(AuthContext);
     useEffect(() => {
         AOS.init();
     }, []);
@@ -20,7 +21,7 @@ const FavFeatured = ({ estate }) => {
     const DeleteFav = () => {
 
 
-        removeFromFavoriteList(parseInt(id));
+        removeFromFavoriteList(parseInt(id), user.email);
 
         console.log("here")
         toast('This Property is Deleted from Favorite list!')

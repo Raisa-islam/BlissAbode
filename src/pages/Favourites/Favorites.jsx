@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { getStoredAddProperty } from '../../Utility/localstorage';
 import { useLoaderData } from 'react-router-dom';
 import FavFeatured from '../../layouts/FavFeatured';
 import { HiOutlineEmojiSad } from "react-icons/hi";
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Favorites = () => {
+    const {user} = useContext(AuthContext);
     const [favProperty, setFavProperty] = useState([]);
     const estates = useLoaderData();
     useEffect(() => {
-        const storedFProperty = getStoredAddProperty();
-        console.log("Books from file:", estates);
+        console.log(user, user.email)
+        const storedFProperty = getStoredAddProperty(user.email);
+        console.log("estates from file:", estates);
         console.log("IDs from local storage:", storedFProperty);
 
         if (estates.length > 0) {
             const FavProperty = estates.filter(estate => storedFProperty.includes(estate.id));
-            console.log("Filtered books:", FavProperty);
+            console.log("Favourite properties:", FavProperty);
             setFavProperty(FavProperty);
 
         }

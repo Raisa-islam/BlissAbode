@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -11,21 +11,30 @@ import { Link } from 'react-router-dom';
 import { FcLike } from "react-icons/fc";
 import { toast } from 'react-toastify';
 import { saveAddProperty } from '../Utility/localstorage';
+import { AuthContext } from '../providers/AuthProviders';
 
 const FeaturedProperties = ({ estate }) => {
+    const {user} = useContext(AuthContext);
     useEffect(() => {
         AOS.init();
     }, []);
     const { id, estate_title, image_link, location, beds, baths, area, features, price, segment_name, status } = estate;
     const addFav = ()=>{
-        if(saveAddProperty(parseInt(id))){
-            console.log("here")
-            toast('This Property added to Favorite list!')
+        console.log(typeof(user.email), user.email);
+        if(user){
+            if(saveAddProperty(parseInt(id), user.email)){
+                console.log("here")
+                toast('This Property added to Favorite list!')
+            }
+            else{
+                console.log("there")
+                toast('This Property is already in Favorite list!')
+            }
         }
         else{
-            console.log("there")
-            toast('This Property is already in Favorite list!')
+            toast("Please Sign in to add Favorites");
         }
+        
         
     } 
 

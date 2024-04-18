@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => { 
-    const {user, signIn, GoogleSignIn, GithubSignIn} = useContext(AuthContext);
+    const {user, signIn, GoogleSignIn, GithubSignIn, FacebookSignIn} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -27,6 +27,10 @@ const Login = () => {
         //navigate after log in
         //navigate(location?.state ? location.state : "/")
        
+    }
+
+    const handleFacebookSignIn =() =>{
+        FacebookSignIn();
     }
 
     const handleGithubSignIn = () =>{
@@ -64,7 +68,7 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-screen flex justify-center items-center">
+        <div className="min-h-screen flex justify-center items-center container mx-auto">
             <div className="w-full lg:w-1/2 p-4">
                 <form onSubmit={handleLogin}>
                     <div className='flex flex-col gap-4'>
@@ -103,6 +107,11 @@ const Login = () => {
                     <button onClick={handleGoogleSignIn} className="bg-gradient-to-r from-teal-400 to-indigo-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-teal-500 hover:to-indigo-600 transition duration-300 font-bold">
                         Continue with Google
                     </button>
+
+                    <button onClick={handleFacebookSignIn} className="bg-gradient-to-r from-purple-400 to-pink-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 transition duration-300 font-bold">
+                        Continue with Facebook
+                    </button>
+
                     <button onClick={handleGithubSignIn} className="bg-gradient-to-r from-purple-400 to-pink-500 border border-gray-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 transition duration-300 font-bold">
                         Continue with GitHub
                     </button>

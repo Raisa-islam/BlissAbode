@@ -121,7 +121,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex justify-center items-center">
+        <div className="min-h-screen flex justify-center items-center container mx-auto">
             <div className="w-full lg:w-1/2 p-4">
                 <form onSubmit={handleRegister} className='flex flex-col gap-4'>
                     <div className='flex flex-col gap-4'>

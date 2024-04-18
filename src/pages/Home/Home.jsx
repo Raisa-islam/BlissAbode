@@ -23,7 +23,7 @@ const Home = () => {
 
     return (
         <div className='pb-12'>
-            <div className='flex flex-row justify-center items-center'>
+            <div className='flex flex-row justify-center items-center max-w-full'>
 
                 <Swiper
                     spaceBetween={30}
@@ -57,19 +57,22 @@ const Home = () => {
 
             </div>
 
-            <div className='container mx-auto mt-12'>
+            <div className='container mx-auto mt-12 max-w-[80%]'>
                 <div className='flex flex-col items-center justify-center text-center'>
                     <h1 className='text-2xl md:text-3xl lg:text-5xl font-semibold text-black'>Featured Properties</h1>
                     <p className='mt-6 text-lg md:text-xl lg:text-2xl font-medium text-[#03071299]'>Find Your Perfect Haven: Dive into Our Featured Properties!</p>
                 </div>
+                <div className='flex justify-center items-center'>
+                    <div className='grid lg:grid-cols-2 gap-6 mt-12 p-4 lg:p-0'>
 
-                <div className='grid lg:grid-cols-2 gap-6 mt-12 p-4 lg:p-0'>
+                        {
+                            data.map((item) => <FeaturedProperties key={item.id} estate={item}></FeaturedProperties>)
+                        }
 
-                    {
-                        data.map((item) => <FeaturedProperties key={item.id} estate={item}></FeaturedProperties>)
-                    }
-
+                    </div>
                 </div>
+
+
             </div>
 
         </div>
