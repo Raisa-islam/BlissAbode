@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from 'react-helmet';
 
 const Login = () => { 
     const {user, signIn, GoogleSignIn, GithubSignIn, FacebookSignIn} = useContext(AuthContext);
@@ -69,6 +70,9 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex justify-center items-center container mx-auto">
+            <Helmet>
+                <title>Bliss Abode | Sign in</title>
+            </Helmet>
             <div className="w-full lg:w-1/2 p-4">
                 <form onSubmit={handleLogin}>
                     <div className='flex flex-col gap-4'>

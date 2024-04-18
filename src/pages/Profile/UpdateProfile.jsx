@@ -4,6 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { AuthContext } from '../../providers/AuthProviders';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const UpdateProfile = () => {
     const { user, ProfileUpdate } = useContext(AuthContext);
@@ -29,7 +30,10 @@ const UpdateProfile = () => {
     };
 
     return (
-        <div className='flex flex-col justify-center items-center p-4 lg:w-1/2 mx-auto mt-6 bg-white pb-12'>
+        <div className='flex flex-col justify-center items-center p-4 lg:w-1/2 container mx-auto mt-6 bg-white pb-12 max-w-[80%]'>
+            <Helmet>
+                <title>Bliss Abode | Update Profile</title>
+            </Helmet>
             <div className="rounded-full border border-gray-200 border-opacity-50 p-2 bg-slate-100 mb-6">
                 <img
                     alt="User Avatar"

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../providers/AuthProviders';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -122,6 +123,9 @@ const Register = () => {
 
     return (
         <div className="min-h-screen flex justify-center items-center container mx-auto">
+            <Helmet>
+                <title>Bliss Abode | Register</title>
+            </Helmet>
             <div className="w-full lg:w-1/2 p-4">
                 <form onSubmit={handleRegister} className='flex flex-col gap-4'>
                     <div className='flex flex-col gap-4'>

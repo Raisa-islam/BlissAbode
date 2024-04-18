@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import FavFeatured from '../../layouts/FavFeatured';
 import { HiOutlineEmojiSad } from "react-icons/hi";
 import { AuthContext } from '../../providers/AuthProviders';
+import { Helmet } from 'react-helmet';
 
 const Favorites = () => {
     const {user} = useContext(AuthContext);
@@ -24,7 +25,10 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div className='container mx-auto mt-12'>
+        <div className='container mx-auto mt-12 max-w-[80%]'>
+            <Helmet>
+                <title>Bliss Abode | Favorites</title>
+            </Helmet>
         <div className='flex flex-col items-center justify-center text-center'>
             <h1 className='text-2xl md:text-3xl lg:text-5xl font-semibold text-black'>Dream Collection: Your Handpicked Hideaways</h1>
             <p className='mt-6 text-lg md:text-xl lg:text-2xl font-medium text-[#03071299]'>Discover Your Personal Paradise - All in One Place</p>

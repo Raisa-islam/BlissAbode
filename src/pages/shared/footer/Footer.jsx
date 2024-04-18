@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <footer className="footer p-10 bg-base-200 text-base-content max-w-full">
       <aside>
-        <img src={logoi} className='w-21 h-20' alt="" />
-        <p>Bliss Abode Industries Ltd.<br />Providing reliable home since 2010</p>
+        <img src={logoi} className='w-16 h-15' alt="" />
+        <p>Bliss Abode Industries Ltd.<br />Providing safe home since 2010</p>
       </aside>
       <nav>
         <h6 className="footer-title">Company</h6>

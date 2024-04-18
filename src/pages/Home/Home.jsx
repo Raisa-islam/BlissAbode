@@ -13,6 +13,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import SliderCard from '../../layouts/SliderCard';
 import { useLoaderData } from 'react-router-dom';
 import FeaturedProperties from '../../layouts/FeaturedProperties';
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -23,6 +24,9 @@ const Home = () => {
 
     return (
         <div className='pb-12'>
+            <Helmet>
+                <title>Bliss Abode | Home</title>
+            </Helmet>
             <div className='flex flex-row justify-center items-center max-w-full'>
 
                 <Swiper

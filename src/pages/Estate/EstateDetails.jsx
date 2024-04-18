@@ -15,6 +15,7 @@ import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { FcLike } from "react-icons/fc";
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const EstateDetails = () => {
     const data = useLoaderData();
@@ -33,8 +34,11 @@ const EstateDetails = () => {
 
     return (
         <div className='bg-slate-200 pb-12'>
-            <div className='container mx-auto pt-12 '>
-                <div className='flex md:flex-row justify-between'>
+            <Helmet>
+                <title>Bliss Abode | Property Details ${id}</title>
+            </Helmet>
+            <div className='container mx-auto pt-12 max-w-[80%]'>
+                <div className='flex flex-col md:flex-row justify-between'>
 
 
                     <div>
