@@ -30,7 +30,7 @@ const Favorites = () => {
     }
 
     return (
-        <div className='container mx-auto mt-12 max-w-[80%] overflow-hidden'>
+        <div className='container mx-auto mt-12 max-w-[80%] overflow-hidden mb-12'>
             <Helmet>
                 <title>Bliss Abode | Favorites</title>
             </Helmet>

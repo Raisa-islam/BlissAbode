@@ -59,7 +59,7 @@ const Navbar = () => {
                 {
                     user && (user.photoURL || flag) ?
                         <>
-                            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                            <div className="tooltip tooltip-bottom z-50" data-tip={user.displayName}>
                                 <Avatar photoURL={user.photoURL} />
                             </div>
 
