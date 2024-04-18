@@ -42,7 +42,7 @@ const EstateDetails = () => {
 
 
                     <div>
-                        <div className='flex flex-col md:flex-row gap-4'>
+                        <div className='flex flex-col lg:flex-row gap-4'>
                             <div>
                                 <p className='font-bold text-lg lg:text-2xl'>{estate_title}</p>
                                 <div><p className='font-semibold text-md lg:text-xl'>Category : <span className='font-bold'>{segment_name}</span></p></div>
