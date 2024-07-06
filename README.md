@@ -25,6 +25,10 @@ Feature-
 
 - Detailed property information is accessible only to logged-in users, maintaining privacy and security while providing an incentive for users to create accounts and engage more deeply with the platform.
 
+Technology used
+- React
+- Firebase
+
 npm Package list for challenging tasks-
 - AOS Package
 - Animate.css
