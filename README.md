@@ -29,3 +29,7 @@ npm Package list for challenging tasks-
 - Animate.css
 - React-leaflet
 - Swiper slider
+
+To Run it-
+1. clone the repo
+2. npm install
