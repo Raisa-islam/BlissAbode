@@ -8,6 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 Website name: Bliss Abode
+
 It's a one stop destination for finding dream homes, offering a vast selection of residential properties and personalized services to match buyers with their perfect abode.
 
 Live Site Url- [https://b9a9-92593.web.app/]
